@@ -1,3 +1,4 @@
+
 package com;
 
 import java.util.Arrays;
@@ -9,33 +10,33 @@ public class Distinction {
 	/*
 	 * showing smallest difference between numbers in array
 	 */
-	private static int getSmallestContraDistinction(int... array) {
+	private static int getSmallestContrast(int... array) {
 		Arrays.sort(array);
-		int contraDistinction = array[1] - array[0];
+		int contrast = array[1] - array[0];
 		for (int i = 0; i < array.length; i++) {
 			for (int j = i + 1; j < array.length; j++) {
-				if (array[j] - array[i] > contraDistinction) {
-					contraDistinction = array[j] - array[i];
+				if (array[j] - array[i] > contrast) {
+					contrast = array[j] - array[i];
 				}
 			}
 		}
-		return contraDistinction;
+		return contrast;
 	}
 
 	/*
 	 * showing largest difference between numbers in array
 	 */
-	private static int getLargestContraDistinction(int... array) {
+	private static int getLargestContrast(int... array) {
 		Arrays.sort(array);
-		int contraDistinction = array[1] - array[0];
+		int contrast = array[1] - array[0];
 		for (int i = 0; i < array.length; i++) {
 			for (int j = i + 1; j < array.length; j++) {
-				if (array[j] - array[i] < contraDistinction) {
-					contraDistinction = array[j] - array[i];
+				if (array[j] - array[i] < contrast) {
+					contrast = array[j] - array[i];
 				}
 			}
 		}
-		return contraDistinction;
+		return contrast;
 	}
 
 	/*
@@ -43,10 +44,11 @@ public class Distinction {
 	 */
 	public static void main(String[] args) {
 
-		int smallest = getSmallestContraDistinction(new int[] { 1, 5, 15, 500 });
-		int largest = getLargestContraDistinction(new int[] { 1, 5, 15, 500 });
+		int smallest = getSmallestContrast(new int[] { 1, 5, 15, 500 });
+		int largest = getLargestContrast(new int[] { 1, 5, 15, 500 });
 
 		System.out.println("Smallest difference : " + smallest);
 		System.out.println("Largest  difference : " + largest);
 	}
 }
+
